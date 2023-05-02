@@ -42,7 +42,7 @@ class Subscription(db.Model):
     frequency = db.Column(db.String(255), nullable=False)
     amount = db.Column(db.Float, nullable=False)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
-    user = db.relationship("user")
+    user = db.relationship("User")
 
 class Content(db.Model):
     id = db.Column(db.Integer, primary_key=True)

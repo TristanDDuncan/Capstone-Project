@@ -8,19 +8,25 @@ const RegisterPage = () => {
     username: "",
     email: "",
     password: "",
-    firstName: "",
-    lastName: "",
+    first_Name: "",
+    last_Name: "",
+    address:"",
+    city:"",
+    state:"",
+    zip_code:"",
   };
   const [formData, handleInputChange, handleSubmit] = useCustomForm(
     defaultValues,
     registerUser
   );
+  
 
   return (
     <div className="container">
       <form className="form" onSubmit={handleSubmit}>
+
         <label>
-          Username:{" "}
+          username:{" "}
           <input
             type="text"
             name="username"
@@ -29,11 +35,11 @@ const RegisterPage = () => {
           />
         </label>
         <label>
-          First Name:{" "}
+          first_Name:{" "}
           <input
             type="text"
             name="firstName"
-            value={formData.firstName}
+            value={formData.first_Name}
             onChange={handleInputChange}
           />
         </label>
@@ -47,7 +53,7 @@ const RegisterPage = () => {
           />
         </label>
         <label>
-          Email:{" "}
+          email:{" "}
           <input
             type="text"
             name="email"
@@ -56,7 +62,7 @@ const RegisterPage = () => {
           />
         </label>
         <label>
-          Password:{" "}
+          password:{" "}
           <input
             type="password"
             name="password"
@@ -64,7 +70,43 @@ const RegisterPage = () => {
             onChange={handleInputChange}
           />
         </label>
-        <button>Register!</button>
+        <label>
+          address:{" "}
+          <input
+          type = "text"
+          name = "address"
+          value={formData.address}
+          onChange={handleInputChange}
+          />
+        </label>
+        <label>
+          city:{" "}
+          <input
+          type = "text"
+          name = "city"
+          value={formData.city}
+          onChange={handleInputChange}
+          />
+        </label>
+        <label>
+          state:{" "}
+          <input
+          type = "text"
+          name = "state"
+          value={formData.state}
+          onChange={handleInputChange}
+          />
+        </label>
+        <label>
+          zip_code:{" "}
+          <input
+          type = "text"
+          name = "zip_code"
+          value={formData.zip_code}
+          onChange={handleInputChange}
+          />
+        </label>
+        <button type="submit">Register!</button>
       </form>
     </div>
   );
