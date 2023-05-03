@@ -40,8 +40,9 @@ class Subscription(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     tier = db.Column(db.String(255), nullable=False)
     frequency = db.Column(db.String(255), nullable=False)
+    category = db.Column(db.String(255))
     amount = db.Column(db.Float, nullable=False)
-    user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
     user = db.relationship("User")
 
 class Content(db.Model):

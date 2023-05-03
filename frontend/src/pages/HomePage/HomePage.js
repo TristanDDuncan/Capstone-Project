@@ -2,8 +2,7 @@ import React from "react";
 import { useEffect, useState } from "react";
 import useAuth from "../../hooks/useAuth";
 import axios from "axios";
-import SurveyPage from "../SurveyPage/SurveyPage.css";
-import { useNavigate, Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const HomePage = () => {
   // The "user" value from this Hook contains the decoded logged in user information (username, first name, id)
@@ -47,7 +46,7 @@ const HomePage = () => {
 
             <button className="buy-now-button">Buy Now</button>
           </div>
-  ))} <button onClick={() => navigate("/survey")}>Take this Survey An Will Find Whats Best</button>
+  ))} <button onClick={() => navigate("/survey")}> Find Whats Suite You</button>
      </div>
   );
 };

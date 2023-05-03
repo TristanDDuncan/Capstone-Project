@@ -86,11 +86,12 @@ class SubscriptionSchema(ma.Schema):
     id = fields.Integer(primary_key=True)
     tier = fields.String(required=True)
     frequency = fields.String(required=True)
+    category = fields.String(required=True)
     amount = fields.Integer(required=True)
     user_id = fields.Integer()
     user = ma.Nested(UserSchema, many=False)
     class Meta:
-        fields = ("id", "tier", "frequency", "amount", "user_id", "user")
+        fields = ("id", "tier", "frequency","category", "amount", "user_id", "user")
 
     @post_load
     def create_subscription(self, data, **kwargs):
