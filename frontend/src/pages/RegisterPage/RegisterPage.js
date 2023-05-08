@@ -35,11 +35,11 @@ const RegisterPage = () => {
           />
         </label>
         <label>
-          first_Name:{" "}
+          firstName:{" "}
           <input
             type="text"
             name="firstName"
-            value={formData.first_Name}
+            value={formData.firstName}
             onChange={handleInputChange}
           />
         </label>

@@ -4,6 +4,8 @@ import useAuth from "../../hooks/useAuth";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
+
+
 const HomePage = () => {
   // The "user" value from this Hook contains the decoded logged in user information (username, first name, id)
   // The "token" value is the JWT token that you will send in the header of any request requiring authentication
@@ -44,7 +46,8 @@ const HomePage = () => {
             </div>
             
 
-            <button className="buy-now-button">Buy Now</button>
+            <button onClick={() => navigate("/payment", { amount: subscription.amount })} >Buy Now</button>
+
           </div>
   ))} <button onClick={() => navigate("/survey")}> Find Whats Suite You</button>
      </div>
