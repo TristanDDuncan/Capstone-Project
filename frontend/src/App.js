@@ -1,5 +1,7 @@
 // General Imports
 import { Routes, Route } from "react-router-dom";
+import React, { useState } from 'react';
+
 import "./App.css";
 // Pages Imports
 import HomePage from "./pages/HomePage/HomePage";
@@ -17,6 +19,7 @@ import Footer from "./components/Footer/Footer";
 import PrivateRoute from "./utils/PrivateRoute";
 
 function App() {
+  const [user, setUser] = useState([{address:"959 Cleveland st", city:"Brooklyn",state:"New York",subscription:"Copper"}])
   return (
     <div>
       <Navbar />
@@ -34,7 +37,7 @@ function App() {
         <Route path="/survey" element={<SurveyPage />}/>
         <Route path="/payment" element={<AddToCart />}/>
         <Route path="/billing" element={<BillingPage />}/>
-        <Route path="/admin" element={<AdminHome />}/>
+        <Route path="/admin" element={<AdminHome parentData={user} />}/>
 
       </Routes>
       <Footer />

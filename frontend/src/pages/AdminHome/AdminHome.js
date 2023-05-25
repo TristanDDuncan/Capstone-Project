@@ -5,11 +5,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
 
-const AdminHome = () => {
-
-    const [user, setUser] = useState([{address:"959 Cleveland st", city:"Brooklyn",state:"New York",subscription:"Copper"}])
-    
-
+const AdminHome = (props) => {
 
 return (
 <div>
@@ -24,7 +20,7 @@ return (
             </tr>
         </thead>
         <tbody>
-            {user.map((data, index) => {
+            {props.parentData.map((data, index) => {
                 return (
                     <tr> 
                         <td>{index + 1}</td>
