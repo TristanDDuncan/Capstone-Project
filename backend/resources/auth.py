@@ -31,12 +31,14 @@ class LoginResource(Resource):
         authorized = user.check_password(form_data.get('password'))
         if not authorized:
             return {'error': 'Username or password invalid'}, 401
+        
         expires = datetime.timedelta(days=7)
         print(user.id)
         additional_claims = {
             'id': user.id,
             'username': user.username,
-            'first_name': user.first_name
+            'first_name': user.first_name,
+            'is_admin': user.is_admin
         }
         access_token = create_access_token(identity=str(user.id), additional_claims=additional_claims, expires_delta=expires)
         return {'access': access_token}, 200

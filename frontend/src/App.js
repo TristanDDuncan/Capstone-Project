@@ -6,8 +6,9 @@ import HomePage from "./pages/HomePage/HomePage";
 import LoginPage from "./pages/LoginPage/LoginPage";
 import RegisterPage from "./pages/RegisterPage/RegisterPage";
 import SurveyPage from "./pages/SurveyPage/SurveyPage";
-import AddToCart from "./pages/AddToCart/AddToCart"
+import AddToCart from "./pages/AddToCart/AddToCart";
 import BillingPage from "./pages/BillPage/BillPage";
+import AdminHome from "./pages/AdminHome/AdminHome"
 // Component Imports
 import Navbar from "./components/NavBar/NavBar";
 import Footer from "./components/Footer/Footer";
@@ -33,6 +34,7 @@ function App() {
         <Route path="/survey" element={<SurveyPage />}/>
         <Route path="/payment" element={<AddToCart />}/>
         <Route path="/billing" element={<BillingPage />}/>
+        <Route path="/admin" element={<AdminHome />}/>
 
       </Routes>
       <Footer />

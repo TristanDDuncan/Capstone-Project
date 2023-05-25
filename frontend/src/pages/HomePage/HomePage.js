@@ -32,7 +32,7 @@ const HomePage = () => {
   return (
     <div className="container">
       {console.log(user)}
-      <h1> {user.username}!!!!</h1>
+      <h1 style={{ textTransform: "uppercase" }}>{user.username}!!!!</h1>
       <h2> Welcome To DripBox Where Your Fashion Needs Are Met With Ease For A Small Fee </h2>
       <h3> No contracts.  100% Satisfaction Guarantee!</h3>
 

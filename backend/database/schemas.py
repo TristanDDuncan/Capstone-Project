@@ -19,8 +19,9 @@ class RegisterSchema(ma.Schema):
     state = fields.String(required=True)
     zip_code = fields.String(required=True)
     subscription = fields.String(required=False)
+    is_admin = fields.Boolean(required=False)
     class Meta:
-        fields = ("id", "username",  "password", "address","first_name", "last_name", "email", "city", "state", "zip_code","subscription")
+        fields = ("id", "username",  "password", "address","first_name", "last_name", "email", "city", "state", "zip_code","subscription", "is_admin")
 
     @post_load
     def create_user(self, data, **kwargs):
@@ -40,9 +41,10 @@ class UserSchema(ma.Schema):
     state = fields.String(required=True)
     zip_code = fields.String(required=True)
     subscription = fields.String(required=False)
+    is_admin = fields.Boolean(required=False)
 
     class Meta:
-        fields = ("id", "username", "first_name", "address", "last_name", "email", "city", "state", "zip_code", "subscription")
+        fields = ("id", "username", "first_name", "address", "last_name", "email", "city", "state", "zip_code", "subscription","is_admin")
 
 register_schema = RegisterSchema()
 user_schema = UserSchema()

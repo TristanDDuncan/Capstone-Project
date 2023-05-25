@@ -15,6 +15,7 @@ function setUserObject(user) {
     username: user.username,
     id: user.id,
     first_name: user.first_name,
+    is_admin: user.is_admin,
   };
 }
 
@@ -63,10 +64,13 @@ export const AuthProvider = ({ children }) => {
         let loggedInUser = jwtDecode(response.data.access);
         setUser(setUserObject(loggedInUser));
         setIsServerError(false);
-        navigate("/");
-      } else {
+        if (loggedInUser.is_admin) {
+          navigate("/admin"); // Redirect to admin page for admin users
+        } else {
+          navigate("/"); // Redirect to default page for non-admin users
+        }
+      } else 
         navigate("/register");
-      }
     } catch (error) {
       console.log(error.response.data);
       setIsServerError(true);

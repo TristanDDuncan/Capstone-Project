@@ -14,6 +14,7 @@ class User(db.Model):
     city = db.Column(db.String(50), nullable=False)
     state = db.Column(db.String(50), nullable=False)
     zip_code = db.Column(db.String(10), nullable=False)
+    is_admin = db.Column(db.Boolean, default=False)
     subscription = db.relationship('Subscription')
     def hash_password(self):
         self.password = generate_password_hash(self.password).decode('utf8')
