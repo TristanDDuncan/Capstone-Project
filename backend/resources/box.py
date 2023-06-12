@@ -2,7 +2,7 @@ from flask import request
 from flask_jwt_extended import jwt_required, get_jwt_identity, verify_jwt_in_request
 from flask_restful import Resource
 from database.models import db, Subscription,Content,Survey,Payment,Admin,User
-from database.schemas import admin_schema, admins_schema, survey_schema,surveys_schema,subscription_schema,subscriptions_schema,content_schema,contents_schema,payment_schema,payments_schema
+from database.schemas import admin_schema, admins_schema, survey_schema,surveys_schema,subscription_schema,subscriptions_schema,content_schema,contents_schema,payment_schema,payments_schema,user_schema,users_schema
 
 
 
@@ -180,4 +180,9 @@ class AdminResources(Resource):
         except:
                 average_subscription = 'Not Available'
                 custom_reponse['Average population']= average_subscription
-        
+
+class UsersResource(Resource):
+    """ Retrieve all users """
+    def get(self):
+        users = User.query.all()
+        return users_schema.dump(users), 200

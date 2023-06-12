@@ -20,6 +20,13 @@ class RegisterResource(Resource):
         except ValidationError as err:
             return err.messages, 400
 
+
+class UsersResource(Resource):
+    """ Retrieve all users """
+    def get(self):
+        users = User.query.all()
+        return user_schema.dump(users), 200
+    
 class LoginResource(Resource):
     """ User Login, responds with access token """
     def post(self):

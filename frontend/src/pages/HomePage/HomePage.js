@@ -43,6 +43,7 @@ const HomePage = () => {
               <h4>{subscription.tier}</h4>
               <p>Frequency: {subscription.frequency}</p>
               <p>Amount: {subscription.amount}</p>
+              <p>Quantity: {subscription.category}</p>
             </div>
             
 
