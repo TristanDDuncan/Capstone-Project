@@ -10,7 +10,7 @@ const AdminHome = () => {
     // Fetch the users data from the API
     const fetchUsers = async () => {
       try {
-        const response = await axios.get('http://127.0.0.1:5000/api/auth/users');
+        const response = await axios.get('http://127.0.0.1:5000/api/auth/register');
         setUsers(response.data);
       } catch (error) {
         // Handle the error
