@@ -88,7 +88,7 @@ class SubscriptionSchema(ma.Schema):
     id = fields.Integer(primary_key=True)
     tier = fields.String(required=True)
     frequency = fields.String(required=True)
-    category = fields.String(required=True)
+    category = fields.Integer(required=True)
     amount = fields.Integer(required=True)
     user_id = fields.Integer()
     user = ma.Nested(UserSchema, many=False)
